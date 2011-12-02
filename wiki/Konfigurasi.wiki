@@ -1,9 +1,9 @@
 #summary One-sentence summary of this page.
 
-= Subdirectory =
-
-* Gunakan 7zip atau Winzip untuk membuka fail.
-* Letakkan folder sbpa pada root server
+= Subdirektori =
+Kaedah ini (disarankan) bagi tujuan pemasangan:
+# Gunakan 7zip atau Winzip untuk membuka fail.
+# Letakkan folder sbpa pada root server
 
 = Subdomain =
 
