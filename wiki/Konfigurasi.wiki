@@ -1,11 +1,12 @@
 #summary One-sentence summary of this page.
+<wiki:toc max_depth="1" />
 
-= Subdirektori =
+= Kaedah 1: Subdirektori =
 Kaedah ini (disarankan) bagi tujuan pemasangan:
  * Gunakan 7zip atau Winzip untuk membuka fail.
  * Letakkan folder sbpa pada root server
 
-= Subdomain =
+= Kaedah 2: Subdomain =
 
  * Gunakan 7zip atau Winzip untuk membuka fail.
  * Letakkan folder sbpa pada mana-mana lokasi dalam server. Contoh: /srv/www/htdocs/sbpa/
