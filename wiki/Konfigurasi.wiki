@@ -2,16 +2,16 @@
 
 = Subdirektori =
 Kaedah ini (disarankan) bagi tujuan pemasangan:
-# Gunakan 7zip atau Winzip untuk membuka fail.
-# Letakkan folder sbpa pada root server
+ # Gunakan 7zip atau Winzip untuk membuka fail.
+ # Letakkan folder sbpa pada root server
 
 = Subdomain =
 
-* Gunakan 7zip atau Winzip untuk membuka fail.
-* Letakkan folder sbpa pada mana-mana lokasi dalam server. Contoh: /srv/www/htdocs/sbpa/
+ # Gunakan 7zip atau Winzip untuk membuka fail.
+ # Letakkan folder sbpa pada mana-mana lokasi dalam server. Contoh: /srv/www/htdocs/sbpa/
 
 ==Apache==
-* Kemaskini Apache Config file (httpd.conf). tukar sbpa.domain.gov.my mengikut kesesuaian.
+ # Kemaskini Apache Config file (httpd.conf). tukar sbpa.domain.gov.my mengikut kesesuaian.
 
 <code language="apache">
 <VirtualHost sbpa.domain.gov.my >
@@ -20,11 +20,11 @@ DocumentRoot /srv/www/htdocs/sbpa/
 </VirtualHost>
 </code>
 
-* Restart Apache
+ # Restart Apache
 
 ==Nginx==
 
-* Kemaskini file nginx.conf
+ # Kemaskini file nginx.conf
 
 <code language="apache">
 # max_clients = worker_processes * worker_connections
@@ -97,4 +97,4 @@ http {
 }
 </code>
 
-* Restart nginx. Rujuk [http://wiki.nginx.org/VirtualHostExample http://wiki.nginx.org/VirtualHostExample] dan [http://wiki.nginx.org/Configuration http://wiki.nginx.org/Configuration] untuk maklumat lanjut.
+ # Restart nginx. Rujuk [http://wiki.nginx.org/VirtualHostExample http://wiki.nginx.org/VirtualHostExample] dan [http://wiki.nginx.org/Configuration http://wiki.nginx.org/Configuration] untuk maklumat lanjut.
