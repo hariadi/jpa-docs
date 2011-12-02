@@ -1,17 +1,18 @@
 #summary One-sentence summary of this page.
-<wiki:toc max_depth="1" />
+=Pemasangan Template SBPA=
+<wiki:toc max_depth="3" />
 
-= Kaedah 1: Subdirektori =
+== Kaedah 1: Subdirektori ==
 Kaedah ini (disarankan) bagi tujuan pemasangan:
  * Gunakan 7zip atau Winzip untuk membuka fail.
  * Letakkan folder sbpa pada root server
 
-= Kaedah 2: Subdomain =
+== Kaedah 2: Subdomain ==
 
  * Gunakan 7zip atau Winzip untuk membuka fail.
  * Letakkan folder sbpa pada mana-mana lokasi dalam server. Contoh: /srv/www/htdocs/sbpa/
 
-==Apache==
+===Apache===
  * Kemaskini Apache Config file (httpd.conf). tukar sbpa.domain.gov.my mengikut kesesuaian.
 
 <code language="apache">
@@ -23,7 +24,7 @@ DocumentRoot /srv/www/htdocs/sbpa/
 
  * Restart Apache
 
-==Nginx==
+===Nginx===
 
  * Kemaskini file nginx.conf
 
