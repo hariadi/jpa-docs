@@ -1,0 +1,13 @@
+#summary One-sentence summary of this page.
+
+= Pemasangan =
+
+ # Muat turun template SBPA terbaru.
+ # Extract ke dalam root server
+ # Muat naik docs.zip melalui FTP yang disediakan
+ # Extract dan letakkan folder `/docs/` ke dalam folder `/sbpa/`
+
+
+= Masalah =
+
+Sila <a href="http://code.google.com/p/jpa-docs/issues/list">laporkan</a> jika terdapat sebarang masalah.
