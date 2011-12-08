@@ -11,3 +11,5 @@
 = Masalah =
 
 Sila <a href="http://code.google.com/p/jpa-docs/issues/list">laporkan</a> jika terdapat sebarang masalah.
+
+NOTA: Senarai penuh dokumen SBPA: [https://docs.google.com/open?id=0B_c_Ueuw2j2iNjE3N2Y3NDEtMzQwZi00OWU5LTllY2UtYmIzYTVkYzQwYWZh Google Docs]
