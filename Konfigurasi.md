@@ -1,0 +1,108 @@
+# Pemasangan Template SBPA #
+
+
+## Kaedah 1: Subdirektori ##
+Kaedah ini (disarankan) bagi tujuan pemasangan:
+  * Gunakan 7zip atau Winzip untuk membuka fail.
+  * Letakkan folder sbpa pada root server
+
+## Kaedah 2: Subdomain ##
+
+  * Gunakan 7zip atau Winzip untuk membuka fail.
+  * Letakkan folder sbpa pada mana-mana lokasi dalam server. Contoh: /srv/www/htdocs/sbpa/
+
+### Apache ###
+  * Kemaskini Apache Config file (httpd.conf). tukar sbpa.domain.gov.my mengikut kesesuaian.
+
+```apache
+
+<VirtualHost sbpa.domain.gov.my >
+ServerName sbpa.domain.gov.my
+DocumentRoot /srv/www/htdocs/sbpa/
+
+
+Unknown end tag for &lt;/VirtualHost&gt;
+
+
+```
+
+  * Restart Apache
+
+### Nginx ###
+
+  * Kemaskini file nginx.conf
+
+```apache
+
+# max_clients = worker_processes * worker_connections
+worker_processes 3;
+
+# This should be > worker_connections
+worker_rlimit_nofile 8192;
+
+events {
+# When you need > 8000 * cpu_cores connections, you start optimizing
+# your OS, and this is probably the point at where you hire people
+# who are smarter than you, this is *a lot* of requests.
+worker_connections  8000;
+}
+
+error_log  logs/error.log;
+pid        logs/nginx.pid;
+
+http {
+keepalive_timeout 20;
+tcp_nopush on;
+tcp_nodelay off;
+index index.html;
+
+log_format   main '$remote_addr - $remote_user [$time_local]  $status '
+'"$request" $body_bytes_sent "$http_referer" '
+'"$http_user_agent" "$http_x_forwarded_for"';
+
+# Click tracking!
+access_log   logs/access.log  main;
+
+keepalive_timeout 20;
+
+gzip on;
+gzip_http_version 1.0;
+gzip_comp_level 5;
+gzip_min_length 512;
+gzip_buffers 4 8k;
+gzip_proxied any;
+gzip_types
+# text/html is always compressed by HttpGzipModule
+text/css
+text/javascript
+text/xml
+text/plain
+text/x-component
+application/javascript
+application/json
+application/xml
+application/rss+xml
+font/truetype
+font/opentype
+application/vnd.ms-fontobject
+image/svg+xml;
+
+gzip_disable        "MSIE [1-6]\.";
+gzip_vary           on;
+
+server {
+server_name sbpa.domain.gov.my;
+access_log logs/sbpa.domain.gov.my.access.log main;
+expires 1M; # yes one month
+
+location ~* ^.+\.(jpg|jpeg|gif|png|ico|css|zip|tgz|gz|rar|bz2|pdf|txt|tar|wav|bmp|rtf|js|flv|swf|html|htm)$
+{
+root /srv/www/htdocs/sbpa;
+access_log off;
+expires max;
+}
+}
+```
+
+  * Restart nginx. Rujuk http://wiki.nginx.org/VirtualHostExample dan http://wiki.nginx.org/Configuration untuk maklumat lanjut.
+
